@@ -1,0 +1,27 @@
+{
+  "name": "app_score",
+  "version": "1.0.0",
+  "description": "app score",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch assets/styles/scss/main.scss  assets/styles/css/style.css",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AubourgA/initProjet_Front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AubourgA/app_score/issues"
+  },
+  "homepage": "https://github.com/AubourgA/app_score#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "husky": "^8.0.3",
+    "sass": "^1.50.0"
+  }
+}
