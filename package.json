@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch assets/styles/scss/main.scss  assets/styles/css/style.css",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "npx cz"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,7 @@
   "homepage": "https://github.com/AubourgA/app_score#readme",
   "config": {
     "commitizen": {
-      "path": "@commitlint/cs-commitlint"
+      "path": "@commitlint/cz-commitlint"
     }
   },
   "devDependencies": {
