@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Poppins&display=swap");
 html,
 body,
 p,
@@ -73,48 +74,56 @@ th {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  height: 100vh;
+}
+
 /** SIZE **/
-/* Calculate values */
-@font-face {
-  font-family: "RobotoL";
-  font-style: light;
-  font-weight: 300;
-  src: url("/assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+h1 {
+  font-family: "Michroma", sans-serif;
+  letter-spacing: 1rem;
+  word-spacing: 1rem;
+  font-size: 2rem;
 }
-@font-face {
-  font-family: "RobotoM";
-  font-style: medium;
-  font-weight: 500;
-  src: url("/assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+
+.title__h2 {
+  font-family: "Poppins", sans-serif;
 }
-@font-face {
-  font-family: "RobotoB";
-  font-style: bold;
-  font-weight: 700;
-  src: url("/assets/fonts/Roboto/Roboto-Black.ttf") format("truetype");
+
+.title--center {
+  text-align: center;
 }
-@font-face {
-  font-family: "AnekTamilL";
-  font-style: light;
-  font-weight: 300;
-  src: url("/assets/fonts/Anek/AnekTamil-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "AnekTamilM";
-  font-style: medium;
-  font-weight: 500;
-  src: url("/assets/fonts/Anek/AnekTamil-Medium.ttf") format("truetype");
-}
-@font-face {
-  font-family: "AnekTamilB";
-  font-style: bold;
-  font-weight: 700;
-  src: url("/assets/fonts/Anek/AnekTamil-Bold.ttf") format("truetype");
-}
+
 /* STYLE BOUTON*/
-.btnSecondary, .btnPrimary {
-  width: 150px;
-  border: 4px solid red;
+.btn--next, .btn--start {
+  width: 15rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.btn--start {
+  background: rgba(29, 158, 233, 0.849);
+  border-radius: 3px;
+  border-color: rgba(29, 158, 233, 0.849);
+  text-align: center;
+}
+
+.btn--next {
+  border-radius: 25px;
+  background: violet;
+  border-color: transparent;
+  width: 100%;
+  font-size: 1.2rem;
 }
 
 nav ul {
@@ -123,12 +132,58 @@ nav ul {
   align-items: center;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
+input {
+  border: 1px solid green;
+}
+
+form {
+  padding: 45px;
+}
+
+form .form__group {
+  padding: 15px;
+}
+form .form__group label {
+  display: inline-block;
+  width: 225px;
+  font-size: 1.2rem;
+}
+form .form__group input[type=number] {
+  border: 1px solid;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+}
+
 /* HEADER COMMUIN*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  padding: 2rem;
+  background: green;
+}
+
 /* FOOTER COMMUN*/
-h1 {
-  font-family: "RobotoB";
-  letter-spacing: 1rem;
-  word-spacing: 1rem;
+.main {
+  height: 40vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,14 +1,22 @@
 //font face
-@include fontface('RobotoL','/assets/fonts/Roboto/Roboto-Light',300,light,ttf);
-@include fontface('RobotoM','/assets/fonts/Roboto/Roboto-Medium',500,medium,ttf);
-@include fontface('RobotoB',"/assets/fonts/Roboto/Roboto-Black",700,bold,ttf);
-
-@include fontface('AnekTamilL','/assets/fonts/Anek/AnekTamil-Light',300,light,ttf);
-@include fontface('AnekTamilM','/assets/fonts/Anek/AnekTamil-Medium',500,medium,ttf);
-@include fontface('AnekTamilB',"/assets/fonts/Anek/AnekTamil-Bold",700,bold,ttf);
-
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Poppins&display=swap');
+$font-primary : 'Michroma', sans-serif;
+$font-secondary :  'Poppins', sans-serif;
 
 //title
+h1 {
+    font-family: $font-primary;
+    letter-spacing: 1rem;
+    word-spacing: 1rem;
+    font-size: 2rem;
+}
 
 
+.title__h2 {
+    font-family: $font-secondary;
+}
+
+.title--center {
+    text-align: center;
+}
 //paragraph

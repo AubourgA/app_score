@@ -1,0 +1,35 @@
+%input {
+    border:none;
+    outline:none;
+}
+
+input {
+    @extend %input;
+    border:1px solid $color-primary;
+}
+
+%form {
+    padding:45px;
+}
+
+form {
+    @extend %form;
+
+    & .form__group {
+        padding:15px;
+        & label {
+            display: inline-block;
+            width: min(225px);
+            font-size: 1.2rem;
+        }
+        & input[type="number"] {
+            border:1px solid;
+            font-size:1.3rem;
+            padding:0.5rem 1rem;
+        }
+    
+    }
+
+}
+
+

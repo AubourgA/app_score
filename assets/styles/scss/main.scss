@@ -8,13 +8,16 @@
 //COMPONENTS
 @import 'components/buttons';
 @import 'components/nav';
+@import 'components/form';
 
 //LAYOUT
 @import 'layout/header';
 @import 'layout/footer';
+@import 'layout/main';
 
 //PAGES
 @import 'pages/home';
+@import 'pages/player';
 
 
 

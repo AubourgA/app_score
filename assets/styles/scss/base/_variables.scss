@@ -1,27 +1,17 @@
 //COLOR
-$primaryColor :  green;     
-$secondaryColor : blue;
-$tertiaryColor : violet;
-$primaryColorLight : greenlight;
-$secondaryColorLight: bluelight;
-$tertairyColorLight : violetLight;
+$color-primary :  green;     
+$color-secondary : rgba(29, 158, 233, 0.849);
+$color-alt : violet;
+$color-bg : #f1f1f1;
 
 
 /** SIZE **/
 
 //border
-$border-size-small : 1px;
+$bs-1 : 1px;
+$br-3: 3px;
+$br-25 : 25px;
 
 
-//font
-$font-size: 100%;
-$ratio: 1.333;
-$rectification: 0.7;
-
-/* Calculate values */
-$h4: $font-size * $ratio;
-$h3: $h4 * $ratio;
-$h2: $h3 * $ratio;
-$h1: $h2 * $ratio;
 
 

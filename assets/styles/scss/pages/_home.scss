@@ -1,5 +1,4 @@
-h1 {
-    font-family: 'RobotoB';
-    letter-spacing: 1rem;
-    word-spacing: 1rem;
+.center {
+    @include flexCenter;
 }
+

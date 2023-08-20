@@ -1,2 +1,9 @@
 /* HEADER COMMUIN*/
 
+header {
+    @include flexCenter;
+    margin:2rem;
+    padding:2rem;
+    background: $color-primary;
+}
+

@@ -73,5 +73,16 @@ th {
   padding: 0;
 }
 
+a{
+  text-decoration: none;
+  color:inherit
+}
 
+a:visited {
+  text-decoration: none;
+  color:inherit;
+}
 
+body {
+  height:100vh;
+}
