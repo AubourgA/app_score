@@ -1,6 +1,6 @@
 {
   "name": "app_score",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "app score",
   "main": "index.js",
   "scripts": {
