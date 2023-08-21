@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
             const form = document.createElement('form');
             createGroup(form); 
             const btnValidate = document.createElement('button');
+            btnValidate.classList.add('btn--next')
             btnValidate.innerHTML = "DEMARRER PARTIE";
             form.appendChild(btnValidate);
             btnValidate.addEventListener('click', handleGame);

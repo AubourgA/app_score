@@ -1,9 +1,21 @@
 .player__list {
     display: flex;
     flex-direction: column;
+    flex:2;
 }
 
-.player__wrap {
+
+.card {
     display:flex;
     justify-content: space-between;
+    padding:30px 25px;
+    margin: 15px 25px;
+    color:$color-white;
 }
+
+
+@for $i from 1 through 3 {
+    .card--#{$i} {
+        background-color: rgba( calc(155/$i),10,$i*20,calc(1/$i*5));
+    }
+} 

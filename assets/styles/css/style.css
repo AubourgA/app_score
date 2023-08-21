@@ -98,10 +98,19 @@ h1 {
 
 .title__h2 {
   font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
 }
 
 .title--center {
   text-align: center;
+}
+
+.text--name {
+  font-size: 1.4rem;
+}
+
+.text--point {
+  font-size: 2rem;
 }
 
 /* STYLE BOUTON*/
@@ -123,6 +132,16 @@ h1 {
   border-color: transparent;
   width: 100%;
   font-size: 1.2rem;
+}
+
+.btn--manche {
+  display: block;
+  margin: 0 auto;
+  border-color: transparent;
+  background-color: violet;
+  width: 90%;
+  font-size: 1.2rem;
+  color: #f1f1f1;
 }
 
 nav ul {
@@ -158,14 +177,36 @@ form .form__group input[type=number] {
   padding: 0.5rem 1rem;
 }
 
+.input--space {
+  padding: 15px;
+  border: none;
+  border-bottom: 1px solid green;
+}
+
 .player__list {
   display: flex;
   flex-direction: column;
+  flex: 2;
 }
 
-.player__wrap {
+.card {
   display: flex;
   justify-content: space-between;
+  padding: 30px 25px;
+  margin: 15px 25px;
+  color: #f1f1f1;
+}
+
+.card--1 {
+  background-color: rgb(155, 10, 20);
+}
+
+.card--2 {
+  background-color: rgb(78, 10, 40);
+}
+
+.card--3 {
+  background-color: rgb(52, 10, 60);
 }
 
 /* HEADER COMMUIN*/
@@ -180,7 +221,7 @@ header {
 
 /* FOOTER COMMUN*/
 .main {
-  height: 40vh;
+  height: 60vh;
 }
 
 .center {

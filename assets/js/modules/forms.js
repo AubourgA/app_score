@@ -16,6 +16,7 @@ export function getNbPlayer() {
                 label.innerHTML = "Nom du joueur "+(i+1);
                 label.setAttribute('for', `name-${i+1}`)
                 let input = document.createElement('input');
+                input.classList.add('input--space')
                 input.setAttribute('id', `name-${i+1}`)
                 formGroup.appendChild(label);
                 formGroup.appendChild(input);
@@ -29,7 +30,7 @@ export function getNbPlayer() {
          * @param {*} el 
          * @returns 
          */
-    export   function myPlayer(el) {
+    export   function myPlayer(el, cl) {
         let article = document.createElement('article');
         let artName = document.createElement('p');
         let artPoint = document.createElement('p');
@@ -37,7 +38,9 @@ export function getNbPlayer() {
         artName.innerHTML = el.playerName;
         artPoint.innerHTML= el.point;
 
-        article.classList.add('player__wrap')
+        artName.classList.add('text--name');
+        artPoint.classList.add('text--point');
+        article.classList.add('card', `${cl}`)
         article.appendChild(artName);
         article.appendChild(artPoint);
 
@@ -56,7 +59,7 @@ export function getNbPlayer() {
     
             for(let i=1; i< NbPlayer+1; i++) {
                let datas = JSON.parse(localStorage.getItem(`player-${i}`));
-               list.appendChild(myPlayer(datas));
+               list.appendChild(myPlayer(datas, `card--${i}`));
             }
             
             return list;
@@ -70,6 +73,7 @@ export function getNbPlayer() {
         export function createBTN(string) {
             const btn = document.createElement('input');
             btn.setAttribute('type', 'button');
+            btn.classList.add('btn--manche');
             btn.value = `${string}`;
             return btn;
         }
