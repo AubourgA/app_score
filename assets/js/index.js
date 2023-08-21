@@ -1,66 +1,51 @@
+import { reset, savePlayer, getNamePlayer } from './modules/utils.js';
+import { title } from './modules/style.js';
+import { createGroup, createListPlayer, createBTN } from './modules/forms.js';
+
 window.addEventListener("DOMContentLoaded", ()=> {
     const elMain = document.querySelector('main');
 
     const btnPlayer = document.querySelector('#btn__player')
 
 
-    function getNumberPlayer() {
-        let players = document.getElementById("players").value; 
-        return players;
-    }
+        /**
+         * Create formular with player to start a game out of generic div
+         */
+       function createFrom() {
+            const form = document.createElement('form');
+            createGroup(form); 
+            const btnValidate = document.createElement('button');
+            btnValidate.innerHTML = "DEMARRER PARTIE";
+            form.appendChild(btnValidate);
+            btnValidate.addEventListener('click', handleGame);
+            elMain.appendChild(form);
 
-    function savePlayer() {
-        let NbPlayer = parseInt(getNumberPlayer());
-        localStorage.setItem('NbPlayer', NbPlayer);
-    }
-
-
-    function reset() {
-        const elForm = document.querySelector('form');
-        elForm.remove();
-    }
-
-    function createGroup(el) {
-        let Nb = parseInt(localStorage.getItem("NbPlayer"));
-        for(let i = 0; i< Nb; i++) {
-            const formGroup = document.createElement('div');
-            formGroup.classList.add('form__group');
-           
-            let label = document.createElement('label');
-            label.innerHTML = "Nom du joueur "+(i+1);
-            label.setAttribute('for', `name-${i+1}`)
-            let input = document.createElement('input');
-            input.setAttribute('id', `name-${i+1}`)
-            formGroup.appendChild(label);
-            formGroup.appendChild(input);
-        el.appendChild(formGroup);    
         }
-        
-    
+
+
+
+    /**
+     * start Game
+     */
+    function handleGame(e) {
+        e.preventDefault();
+        getNamePlayer();
+        reset('form');
+        reset('h2')
+        elMain.appendChild(title("Classement",'title--center'));
+        elMain.appendChild(createListPlayer());
+        elMain.appendChild(createBTN("Nouvelle Manche"));
     }
-    //Create new form for name of player
-    function createFrom() {
-        const form = document.createElement('form');
-              
-        createGroup(form); 
-        const btnValidate = document.createElement('button');
-        btnValidate.innerHTML = "DEMARRER PARTIE";
-        form.appendChild(btnValidate);
-        elMain.appendChild(form);
-       
-    }
 
 
-
-
-    //launch function 
+    /**
+     * Create Game
+     *  */ 
     btnPlayer.addEventListener('click', (e)=> {
         e.preventDefault();
         savePlayer();
-        reset();
+        reset('form');
         createFrom();
     })
-
-    
 
 })

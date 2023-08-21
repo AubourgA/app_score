@@ -3,6 +3,7 @@
 %btn {
     width:15rem;
     padding:1rem;
+    border-radius: $br-25;
     cursor:pointer;
     
 }
@@ -10,14 +11,12 @@
 .btn--start {
     @extend %btn;
     background: $color-secondary;
-    border-radius: $br-3;
     border-color: $color-secondary;
    text-align: center;
 }
 
 .btn--next {
     @extend %btn;
-    border-radius: $br-25;
     background: $color-alt;
     border-color:transparent;
     width:100%;
@@ -25,4 +24,7 @@
 }
 
 
+.btn--manche {
+    @extend %btn;
 
+}
