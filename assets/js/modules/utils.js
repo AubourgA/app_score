@@ -20,6 +20,96 @@ export  function getNamePlayer() {
              point : 0
         };
 
-        localStorage.setItem(`player-${key+1}`,  JSON.stringify(ObjPlayer));
+        localStorage.setItem(`player${key+1}`,  JSON.stringify(ObjPlayer));
      })
  }
+
+ /**
+  * Check if every player have record score or not
+  * 
+  * @param {} el 
+  * @returns 
+  */
+ const verifTour = (el) => {
+    let count = 0;
+    el.forEach( item => {
+        if(item.classList.contains('active')) {
+            count++;
+        }
+    })
+
+    if (count>0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+
+
+
+const createModal = (data) => {
+    const modalWrapper = document.createElement('div');
+    modalWrapper.classList.add('modal__container');
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    
+    
+    //btn
+    const btnValid = document.createElement('button');
+    btnValid.classList.add('modal__btn');
+    btnValid.addEventListener('click', ()=> {
+        let currentPlayer = JSON.parse(localStorage.getItem(data));
+        currentPlayer.point = currentPlayer.point + parseInt(inputPoint.value);
+     
+        localStorage.setItem(data, JSON.stringify(currentPlayer));
+        ;
+
+    });
+    btnValid.innerHTML = "Ajouter";
+
+    //label
+    const labelPoint = document.createElement('label');
+    labelPoint.classList.add('title__h3');
+    labelPoint.innerHTML = 'Point Manche : ';
+
+    //input
+    const inputPoint = document.createElement('input');
+    inputPoint.classList.add('modal__input');
+    inputPoint.setAttribute('type','number')
+
+    modal.appendChild(labelPoint);
+    modal.appendChild(inputPoint);
+    modal.appendChild(btnValid);
+    modalWrapper.appendChild(modal);
+
+    document.body.prepend(modalWrapper);
+   
+
+}
+ 
+ const addPoint = (e) => {
+    e.target.classList.remove('active');
+    createModal(e.target.dataset.player);
+    e.target.removeEventListener('click', addPoint);
+    
+ }
+
+export const handleTour = () => {
+     const playerDiv = document.querySelectorAll('.player__list article');               
+    
+    if( !verifTour(playerDiv) ) {
+        alert('Manche incomplete');
+        return
+         };
+
+     playerDiv.forEach(item => {
+       item.classList.add('active');
+       item.addEventListener('click', addPoint);
+
+     })
+ }
+
+
+ 

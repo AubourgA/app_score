@@ -35,3 +35,11 @@
     color: $color-white;
     
 }
+
+.modal__btn {
+    @extend %btn;
+    width:90%;
+    font-family: $font-secondary;
+    border: none;
+    background: $color-alt;
+}

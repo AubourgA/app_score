@@ -101,6 +101,11 @@ h1 {
   font-size: 1.4rem;
 }
 
+.title__h3 {
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+}
+
 .title--center {
   text-align: center;
 }
@@ -114,7 +119,7 @@ h1 {
 }
 
 /* STYLE BOUTON*/
-.btn--manche, .btn--next, .btn--start {
+.modal__btn, .btn--manche, .btn--next, .btn--start {
   width: 15rem;
   padding: 1rem;
   border-radius: 25px;
@@ -142,6 +147,13 @@ h1 {
   width: 90%;
   font-size: 1.2rem;
   color: #f1f1f1;
+}
+
+.modal__btn {
+  width: 90%;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  background: violet;
 }
 
 nav ul {
@@ -209,6 +221,38 @@ form .form__group input[type=number] {
   background-color: rgb(52, 10, 60);
 }
 
+.modal__container {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 50%;
+  height: 30%;
+  padding: 30px;
+  background: #09dbdb;
+  border-radius: 15px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal__input {
+  padding: 15px;
+  font-size: 1.4rem;
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid violet;
+}
+
 /* HEADER COMMUIN*/
 header {
   display: flex;
@@ -230,10 +274,19 @@ header {
   align-items: center;
 }
 
+body {
+  overflow: hidden;
+}
+
 .d-flex-between {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.active {
+  border: 3px solid rgb(210, 231, 18);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

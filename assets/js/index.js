@@ -1,6 +1,6 @@
-import { reset, savePlayer, getNamePlayer } from './modules/utils.js';
+import { reset, savePlayer, getNamePlayer, handleTour } from './modules/utils.js';
 import { title } from './modules/style.js';
-import { createGroup, createListPlayer, createBTN } from './modules/forms.js';
+import { createGroup, createListPlayer } from './modules/forms.js';
 
 window.addEventListener("DOMContentLoaded", ()=> {
     const elMain = document.querySelector('main');
@@ -24,6 +24,21 @@ window.addEventListener("DOMContentLoaded", ()=> {
         }
 
 
+     /**
+         * Create an element BTN nouvelle manche
+         * @param {*} string 
+         */
+       function createBTN(string) {
+        const btn = document.createElement('input');
+        btn.setAttribute('type', 'button');
+        btn.classList.add('btn--manche');
+        btn.value = `${string}`;
+        btn.addEventListener('click', handleTour);
+
+        return btn;
+    }
+
+
 
     /**
      * start Game
@@ -44,6 +59,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
      *  */ 
     btnPlayer.addEventListener('click', (e)=> {
         e.preventDefault();
+        localStorage.clear();
         savePlayer();
         reset('form');
         createFrom();

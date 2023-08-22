@@ -30,7 +30,7 @@ export function getNbPlayer() {
          * @param {*} el 
          * @returns 
          */
-    export   function myPlayer(el, cl) {
+    export   function myPlayer(el, cl,num) {
         let article = document.createElement('article');
         let artName = document.createElement('p');
         let artPoint = document.createElement('p');
@@ -40,7 +40,8 @@ export function getNbPlayer() {
 
         artName.classList.add('text--name');
         artPoint.classList.add('text--point');
-        article.classList.add('card', `${cl}`)
+        article.classList.add('card', `${cl}`);
+        article.dataset.player = `player${num}`;
         article.appendChild(artName);
         article.appendChild(artPoint);
 
@@ -57,23 +58,12 @@ export function getNbPlayer() {
             let list = document.createElement('div')
             list.classList.add('player__list');
     
+            // loop for getting datas and attribute them to each card
             for(let i=1; i< NbPlayer+1; i++) {
-               let datas = JSON.parse(localStorage.getItem(`player-${i}`));
-               list.appendChild(myPlayer(datas, `card--${i}`));
+               let datas = JSON.parse(localStorage.getItem(`player${i}`));
+               list.appendChild(myPlayer(datas, `card--${i}`, `${i}`));
             }
             
             return list;
         }
     
-
-        /**
-         * Create an element BTN
-         * @param {*} string 
-         */
-        export function createBTN(string) {
-            const btn = document.createElement('input');
-            btn.setAttribute('type', 'button');
-            btn.classList.add('btn--manche');
-            btn.value = `${string}`;
-            return btn;
-        }

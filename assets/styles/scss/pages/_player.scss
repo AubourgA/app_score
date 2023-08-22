@@ -1,5 +1,14 @@
+body {
+    overflow: hidden;
+}
+
 .d-flex-between {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.active {
+    border: 3px solid $color--active;
+    cursor:pointer;
 }

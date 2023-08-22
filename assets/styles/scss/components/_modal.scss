@@ -1,0 +1,32 @@
+.modal__container {
+    position:fixed;
+    top:0;
+    width: 100vw;
+    height:100vh;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+    align-items: center;
+    width:95%;
+    max-width: 50%;
+    height:30%;
+    padding: 30px;
+    background: #09dbdb;
+    border-radius: 15px;
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.modal__input {
+    padding:15px;
+   font-size: 1.4rem;
+    width:100px;
+    border:none;
+    border-bottom:1px solid $color-alt;
+}
+
