@@ -8,14 +8,6 @@ export function unShowModal() {
     modal.classList.add('desactive');
 }
 
-/**
-* record in localStorage nb player
-*/
-export function savePlayer() {
-   let NbPlayer = parseInt(document.getElementById("players").value);
-   localStorage.setItem('NbPlayer', NbPlayer);
-}
-
 
 export  function getNamePlayer() {
     const players = document.querySelectorAll('.form__group > input');

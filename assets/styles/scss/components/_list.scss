@@ -14,8 +14,8 @@
 }
 
 
-@for $i from 1 through 3 {
+@for $i from 1 through 4 {
     .card--#{$i} {
-        background-color: rgba( calc(155/$i),10,$i*20,calc(1/$i*5));
+        background-color: rgba( calc(65/$i*3.14),30,$i*40,calc(1/$i*5));
     }
 } 

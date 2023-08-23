@@ -23,9 +23,26 @@
         <h2 class="title__h2 title--center">Configurer Partie</h2>
 
         <form>
-            <div class="form__group">
-                <label for="players">Nombre de Joueur</label>
-                <input id="players" type="number" min="1" max="10">
+            <h3 class="title__h3" for="players">Nombre de Joueurs : </h3>
+            <div class="form__group ">
+                <!-- <input id="players" type="number" min="1" max="10"> -->
+                <!-- Select Nb de player -->
+                <div>
+                    <input type="radio" name="player" id="p2" value="2">
+                    <label for="p2">2</label>
+
+                </div>
+                <div>
+                    <input type="radio" name="player" id="p3" value="3" checked>
+                    <label for="p3">3</label>
+
+                </div>
+                <div>
+
+                    <input type="radio" name="player" id="p4" value="4">
+                    <label for="p4">4</label>
+                </div>
+
             </div>
             <button id="btn__player" class="btn--next">Suivant</button>
         </form>
