@@ -253,6 +253,10 @@ form .form__group input[type=number] {
   border-bottom: 1px solid violet;
 }
 
+.desactive {
+  display: none;
+}
+
 /* HEADER COMMUIN*/
 header {
   display: flex;

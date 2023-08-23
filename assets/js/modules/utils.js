@@ -3,6 +3,11 @@ export  function reset(el) {
     removeEl.remove();
 }
 
+export function unShowModal() {
+    const modal = document.querySelector('.modal__container')
+    modal.classList.add('desactive');
+}
+
 /**
 * record in localStorage nb player
 */
@@ -45,10 +50,18 @@ export  function getNamePlayer() {
     }
 }
 
+/**
+ * Update point for each player
+ */
+function updatePlayerPoint(player, point) {
+    let playerPoint = document.querySelector(`[data-player=${player}] > .text--point`);
+    playerPoint.innerText = point;
+}
 
-
-
-
+/**
+ * Create Modal for assignating points to player
+ * @param {*} data 
+ */
 const createModal = (data) => {
     const modalWrapper = document.createElement('div');
     modalWrapper.classList.add('modal__container');
@@ -64,7 +77,9 @@ const createModal = (data) => {
         currentPlayer.point = currentPlayer.point + parseInt(inputPoint.value);
      
         localStorage.setItem(data, JSON.stringify(currentPlayer));
-        ;
+        unShowModal();
+       
+        updatePlayerPoint(data, currentPlayer.point)
 
     });
     btnValid.innerHTML = "Ajouter";
