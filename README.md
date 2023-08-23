@@ -8,6 +8,15 @@ Greensock
 
 # Initialisation projet
 
+cloner le projet :
+
+````
+git clone https://github.com/AubourgA/app_score.git
+
+````
+
+installer les dépendances :
+
 ````
 npm install
 ````
