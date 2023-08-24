@@ -6,6 +6,7 @@ export  function reset(el) {
 export function unShowModal() {
     const modal = document.querySelector('.modal__container')
     modal.classList.add('desactive');
+    
 }
 
 
@@ -50,18 +51,24 @@ function updatePlayerPoint(player, point) {
     playerPoint.innerText = point;
 }
 
+
+
+
+
 /**
  * Create Modal for assignating points to player
  * @param {*} data 
  */
 const createModal = (data) => {
+
+    //definition du conteneur
     const modalWrapper = document.createElement('div');
     modalWrapper.classList.add('modal__container');
     const modal = document.createElement('div');
     modal.classList.add('modal');
     
     
-    //btn
+    //definition du btn
     const btnValid = document.createElement('button');
     btnValid.classList.add('modal__btn');
     btnValid.addEventListener('click', ()=> {
@@ -70,18 +77,18 @@ const createModal = (data) => {
      
         localStorage.setItem(data, JSON.stringify(currentPlayer));
         unShowModal();
-       
         updatePlayerPoint(data, currentPlayer.point)
+       reset('.desactive');
 
     });
     btnValid.innerHTML = "Ajouter";
 
-    //label
+    // definition du label
     const labelPoint = document.createElement('label');
     labelPoint.classList.add('title__h3');
     labelPoint.innerHTML = 'Point Manche : ';
 
-    //input
+    // definition de l'input
     const inputPoint = document.createElement('input');
     inputPoint.classList.add('modal__input');
     inputPoint.setAttribute('type','number')
@@ -92,8 +99,6 @@ const createModal = (data) => {
     modalWrapper.appendChild(modal);
 
     document.body.prepend(modalWrapper);
-   
-
 }
  
  const addPoint = (e) => {
@@ -114,7 +119,6 @@ export const handleTour = () => {
      playerDiv.forEach(item => {
        item.classList.add('active');
        item.addEventListener('click', addPoint);
-
      })
  }
 

@@ -38,6 +38,7 @@ form {
 
         & input[type='radio']:checked + label  {
             background: $color-selected;
+            border:1px solid #333;
         }
       
     

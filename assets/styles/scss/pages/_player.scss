@@ -1,5 +1,6 @@
 body {
     overflow: hidden;
+    min-height: 700px;
 }
 
 .d-flex-between {
@@ -9,6 +10,27 @@ body {
 }
 
 .active {
-    border: 3px solid $color--active;
+    box-shadow: 0 0 0 rgba(109, 93, 37, 0.4);
     cursor:pointer;
+  animation: pulse 2s infinite;
+  z-index: 1;
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.8);
+        box-shadow: 0 0 0 0 rgba(6, 223, 150, 0.664);
+      }
+      60% {
+        transform: scale(1.01);
+          -moz-box-shadow: 0 0 0px 10px rgba(204,169,44, 0.0);
+          box-shadow: 0 0 0px 10px rgba(204,169,44, 0);
+      }
+      100% {
+        transform: scale(1);
+          -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+          box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      }
 }
