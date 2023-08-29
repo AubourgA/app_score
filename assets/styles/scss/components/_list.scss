@@ -8,6 +8,7 @@
 .card {
     display:flex;
     justify-content: space-between;
+    align-items: center;
     padding:1rem;
     margin: 15px 25px;
     color:$color-white;
@@ -18,4 +19,11 @@
     .card--#{$i} {
         background-color: rgba( calc(65/$i*3.14),30,$i*40,calc(1/$i*5));
     }
+  
 } 
+
+@for $i from 1 through 4 {
+    .order-#{$i} {
+        order: $i;
+    }
+}

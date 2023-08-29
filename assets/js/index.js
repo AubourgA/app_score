@@ -2,6 +2,7 @@ import { reset, getNamePlayer, handleTour } from './modules/utils.js';
 import { title } from './modules/style.js';
 import { createGroup, createListPlayer } from './modules/forms.js';
 
+
 window.addEventListener("DOMContentLoaded", ()=> {
     const elMain = document.querySelector('main');
 
@@ -45,10 +46,9 @@ window.addEventListener("DOMContentLoaded", ()=> {
         reset('form');
         reset('h2')
       
-        elMain
-            .appendChild(title("Classement",'title--center'))
-            .appendChild(createListPlayer())
-            .appendChild(createBTN("Nouvelle Manche"));
+        elMain.appendChild(title("Manche ",'title--center'));
+        elMain.appendChild(createListPlayer());
+        elMain.appendChild(createBTN("Nouvelle Manche"));
     }
 
 
@@ -58,18 +58,27 @@ window.addEventListener("DOMContentLoaded", ()=> {
     */
     const form = document.querySelector('form');
         // get form data
-        form.addEventListener("submit", (e)=> {
-            const data = new FormData(form);
-            let res;
-            for (const entry of data) {
-               res = entry[1];
-            }
-            e.preventDefault();
-        //save nb player in localStorage
-            localStorage.setItem('NbPlayer', res);
-            reset('form');
-            createFrom();
-        })
-    
+        if(form) {
 
+            form.addEventListener("submit", (e)=> {
+                const data = new FormData(form);
+                let res = [];
+                for (const entry of data) {
+                    res.push(entry[1]);
+                }
+           
+                e.preventDefault();
+            //save nb player and maxpoint in localStorage
+                localStorage.setItem('NbPlayer', res[0]);
+                localStorage.setItem('MaxPoint', res[1]);
+                reset('form');
+                createFrom();
+            })
+        
+        }
+
+
+      
+
+       
 })

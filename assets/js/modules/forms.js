@@ -30,7 +30,7 @@ export function getNbPlayer() {
          * @param {*} el 
          * @returns 
          */
-    export   function myPlayer(el, cl,num) {
+    export   function myPlayer(el, cl,num, namePlayer) {
         let article = document.createElement('article');
         let artName = document.createElement('p');
         let artPoint = document.createElement('p');
@@ -42,6 +42,7 @@ export function getNbPlayer() {
         artPoint.classList.add('text--point');
         article.classList.add('card', `${cl}`);
         article.dataset.player = `player${num}`;
+        article.dataset.name = `${namePlayer}`;
         article.appendChild(artName);
         article.appendChild(artPoint);
 
@@ -61,7 +62,7 @@ export function getNbPlayer() {
             // loop for getting datas and attribute them to each card
             for(let i=1; i< NbPlayer+1; i++) {
                let datas = JSON.parse(localStorage.getItem(`player${i}`));
-               list.appendChild(myPlayer(datas, `card--${i}`, `${i}`));
+               list.appendChild(myPlayer(datas, `card--${i}`, `${i}`, JSON.parse(localStorage.getItem('player'+i)).playerName));
             }
             
             return list;

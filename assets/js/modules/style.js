@@ -4,3 +4,4 @@ export const title = (string, cl) => {
     h2.classList.add(`${cl}`,'title__h2');
     return h2;
 }
+
