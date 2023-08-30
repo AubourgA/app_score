@@ -166,29 +166,15 @@ export const handleTour = () => {
                 document.querySelector('.btn--manche').value = "Fin de partie";
                 launchConfetti();   
                 playerListSorted.forEach( (item, index) => {
-        
+                    
                     document.querySelector(`[data-name=${item.playerName}]`).classList.add('order-'+(Nb-index));
         
-                    
                 } );
-
+              document.querySelector(`[data-name=${playerListSorted[Nb-1].playerName}] .text--name`).prepend(document.createElement('span').innerText = "🏆");
+                
             }
-        }
-            
+        }       
 
-
-
-
-            // if(JSON.parse(localStorage.getItem('player'+(i+1) )).point >= maxPoint) {
-                
-            //     document.querySelector('.title__h2').innerText = 'Classement';
-            //     //associer les class order
-
-            //     // document.querySelector("[data-name="`"${playerList[i+1][playerName]}"]`).classList.add('order-'+(i+1));
-            //     launchConfetti();        
-                
-            // } 
-        
     }
  }
 
