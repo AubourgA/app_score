@@ -1,6 +1,6 @@
 {
   "name": "app_score",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "app score",
   "main": "index.js",
   "scripts": {
@@ -32,5 +32,4 @@
     "husky": "^8.0.3",
     "sass": "^1.50.0"
   }
-
 }
